@@ -1,5 +1,6 @@
 #include "RF24.h"
 #include "printf.h"
+#include <LiquidCrystal_I2C.h>
 #include <SPI.h>
 
 #define CE_PIN 9
@@ -18,14 +19,41 @@ int buttons[] = {up_button,    down_button,   left_button,  right_button,
                  start_button, select_button, analog_button};
 
 RF24 radio(CE_PIN, CSN_PIN);
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 uint8_t address[][6] = {"1Node", "2Node"};
 bool radioNumber = 0; // opposite of car
 bool role = true;     // controller starts as TX
 int16_t payload[9];
 
+struct Speeds {
+  int left;
+  int right;
+};
+
+struct Sensors {
+  int leftOuter;
+  int leftInner;
+  int center;
+  int rightInner;
+  int rightOuter;
+};
+
+struct Data {
+  Speeds speed;
+  Sensors sensors;
+};
+
+Data display;
+
 void setup() {
   Serial.begin(9600);
+
+  lcd.init();
+  lcd.backlight();
+
+  lcd.setCursor(0, 0);
+  lcd.print("Hello World");
 
   if (!radio.begin()) {
     Serial.println(F("nRF24 hardware not responding!"));
@@ -34,7 +62,6 @@ void setup() {
   }
 
   radio.setPALevel(RF24_PA_LOW);
-  radio.setPayloadSize(sizeof(payload));
 
   radio.openWritingPipe(address[radioNumber]);
   radio.openReadingPipe(1, address[!radioNumber]);
@@ -63,5 +90,9 @@ void loop() {
   payload[8] = digitalRead(analog_button);
 
   radio.write(&payload, sizeof(payload));
+
+  if (radio.available()) {
+    radio.read(&display, sizeof(display));
+  }
   delay(10);
 }

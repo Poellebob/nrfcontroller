@@ -222,7 +222,13 @@
         "output": ".pio/build/uno/lib93a/Adafruit GFX Library/glcdfont.c.o"
     },
     {
-        "command": "/home/viggokh/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc \"-I.pio/libdeps/uno/Adafruit GFX Library\" \"-I.pio/libdeps/uno/Adafruit BusIO\" -I/home/viggokh/.platformio/packages/framework-arduino-avr/libraries/Wire/src -I.pio/libdeps/uno/RF24 -I.pio/libdeps/uno/RF24/utility -I/home/viggokh/.platformio/packages/framework-arduino-avr/libraries/SPI/src -I/home/viggokh/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/viggokh/.platformio/packages/framework-arduino-avr/variants/standard src/main.cpp",
+        "command": "/home/viggokh/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/liba73/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio/libdeps/uno/LiquidCrystal_I2C -I/home/viggokh/.platformio/packages/framework-arduino-avr/libraries/Wire/src -I/home/viggokh/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/viggokh/.platformio/packages/framework-arduino-avr/variants/standard .pio/libdeps/uno/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp",
+        "directory": "/home/viggokh/Documents/jesus-controller",
+        "file": ".pio/libdeps/uno/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp",
+        "output": ".pio/build/uno/liba73/LiquidCrystal_I2C/LiquidCrystal_I2C.cpp.o"
+    },
+    {
+        "command": "/home/viggokh/.platformio/packages/toolchain-atmelavr/bin/avr-g++ -o .pio/build/uno/src/main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60118 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -I.pio/libdeps/uno/LiquidCrystal_I2C \"-I.pio/libdeps/uno/Adafruit GFX Library\" \"-I.pio/libdeps/uno/Adafruit BusIO\" -I/home/viggokh/.platformio/packages/framework-arduino-avr/libraries/Wire/src -I.pio/libdeps/uno/RF24 -I.pio/libdeps/uno/RF24/utility -I/home/viggokh/.platformio/packages/framework-arduino-avr/libraries/SPI/src -I/home/viggokh/.platformio/packages/framework-arduino-avr/cores/arduino -I/home/viggokh/.platformio/packages/framework-arduino-avr/variants/standard src/main.cpp",
         "directory": "/home/viggokh/Documents/jesus-controller",
         "file": "src/main.cpp",
         "output": ".pio/build/uno/src/main.cpp.o"
